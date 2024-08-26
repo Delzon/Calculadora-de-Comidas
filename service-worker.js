@@ -2,14 +2,13 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('mi-cache').then((cache) => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/style.css',
-                '/script.js',
-                '/icon-192x192.png',
-                '/icon-512x512.png',
-                '/favicon.ico',
-                '/manifest.webmanifest'
+                './index.html',
+                './style.css',
+                './script.js',
+                './icon-192x192.png',
+                './icon-512x512.png',
+                './favicon.ico',
+                './manifest.webmanifest'
             ]);
         })
     );
