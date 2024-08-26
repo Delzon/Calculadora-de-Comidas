@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Comidas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registrado con éxito:', registration);
+            })
+            .catch(function(error) {
+                console.log('Error al registrar el Service Worker:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Calculadora de Comidas</h1>
+
+    <label for="fechaInicio">Fecha de Inicio:</label>
+    <input type="date" id="fechaInicio">
+
+    <label for="fechaFin">Fecha de Fin:</label>
+    <input type="date" id="fechaFin">
+
+    <label for="vecesPorDia">¿Cuántas veces al día come el perro?</label>
+    <input type="number" id="vecesPorDia" min="1" value="2">
+
+    <label for="porcionesInicio">¿Cuántas porciones se le dará el día de inicio en el hospedaje?</label>
+    <input type="number" id="porcionesInicio" min="0" value="1">
+
+    <label for="porcionesFin">¿Cuántas porciones se le dará el día de salida en el hospedaje?</label>
+    <input type="number" id="porcionesFin" min="0" value="0">
+
+    <label for="porcionesTotales">¿Cuántas porciones trajo consigo el perro?</label>
+    <input type="number" id="porcionesTotales" min="0" value="0">
+
+    <button onclick="calcularDiasYComidas()">Calcular</button>
+    <button id="reset" onclick="restablecerValores()">Restablecer</button>
+
+    <div id="resultado"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
