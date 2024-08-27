@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calculador-de-comidas-v3';  // Cambia este nombre con cada actualización
+const CACHE_NAME = 'calculador-de-comidas-v3.1';  // Cambia este nombre con cada actualización
 const urlsToCache = [
     './',
     './index.html',
