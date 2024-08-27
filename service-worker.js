@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calculador-de-comidas-v3.1';  // Cambia este nombre con cada actualización
+const CACHE_NAME = 'calculador-de-comidas-v3.0';  // Cambia este nombre con cada actualización
 const urlsToCache = [
     './',
     './index.html',
@@ -23,10 +23,13 @@ self.addEventListener('activate', event => {
             return Promise.all(
                 cacheNames.map(cacheName => {
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        console.log(`Eliminando caché antigua: ${cacheName}`);
                         return caches.delete(cacheName);  // Elimina cachés antiguas
                     }
                 })
             );
+        }).then(() => {
+            return self.clients.claim();  // Toma control inmediato de los clientes
         })
     );
 });
