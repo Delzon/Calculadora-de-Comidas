@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #1c2128;
+    color: #c5d1de;
 }
 
 label, input {
@@ -25,4 +29,17 @@ button {
 
 #reset {
     background-color: #f44336;
+}
+
+
+input {
+    padding: 10px;
+    border-radius: 4px;
+    border-color: #1c2128;
+}
+h1 {
+    display: none;
+}
+button {
+    font-size: 16px;
 }
